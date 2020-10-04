@@ -1,0 +1,519 @@
+/*! ~~~~~~˚∆˚~~~~~~ Default CSS ~~~~~~˚∆˚~~~~~~ */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+.App {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #000;
+    background-color: #e5e5e5;
+}
+
+.hyper-padding {
+    padding-top: 80px;
+    padding-bottom: 300px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+
+/*! ~~~~~~˚∆˚~~~~~~  Header  ~~~~~~˚∆˚~~~~~~*/
+
+.header {
+    width: 100%;
+    height: 496px;
+    position: relative;
+}
+
+.header-bg {
+    background-color: #ddd;
+    background: linear-gradient( 0deg, rgba(38, 28, 34, 0.826), rgba(194, 32, 140, 0.846));
+    background-image: url("./images/image/Mask\ Group.jpg");
+    width: 100%;
+    height: 496px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.header-bg:before {
+    position: absolute;
+    width: 100%;
+    height: 496px;
+    content: "";
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~  Header Search ~~~~~~˚∆˚~~~~~~*/
+
+.header-search-box h1 {
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    margin-bottom: 26px;
+}
+
+.header-search-box input[type="text"] {
+    padding: 4px 11px;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px 0px 0px 8px;
+    background-color: #fbfbfb;
+    box-sizing: border-box;
+    width: 355px;
+    height: 50px;
+}
+
+.header-search-box button {
+    width: 110px;
+    height: 50px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~ Navbar ~~~~~~˚∆˚~~~~~~ */
+
+.header-logo img {
+    width: 202px;
+    height: 60px;
+}
+
+.menu ul {
+    display: inline-block;
+}
+
+.menu ul a {
+    display: inline-block;
+    color: #000;
+    padding: 13px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu ul a:hover {
+    color: #999;
+}
+
+.menu ul a button {
+    font-size: 16px;
+    padding: 14px 46px;
+    margin-left: -10px;
+}
+
+button.section-btn {
+    width: 0px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    color: red;
+    font-weight: 700;
+    outline: none;
+    transition: .3s;
+    position: relative;
+}
+
+.menu ul h6 {
+    display: inline-block;
+}
+
+.theme-navbar {
+    padding: 44px 0;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~ Volunteer Card ~~~~~~˚∆˚~~~~~~ */
+
+.volunteer {
+    position: absolute;
+    top: 344px;
+    left: 93px;
+}
+
+.volunteer .volunteer-card {
+    margin-bottom: 30px;
+}
+
+.volunteer-card {
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+    width: 270px;
+    height: 320px;
+    background-color: #ddd;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.volunteer-card:hover {
+    opacity: 0.5;
+}
+
+.volunteer-card img {
+    max-width: 270px;
+    max-height: 320px;
+    background-color: #ddd;
+}
+
+.volunteer-card .volunteer-title {
+    position: absolute;
+    bottom: -8px;
+    width: 100%;
+    background-color: red;
+    border-radius: 0px 0px 10px 10px;
+    height: 96px;
+}
+
+.volunteer-title h5 {
+    width: 228px;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    padding: 24px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 24.38px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~ Login ~~~~~~˚∆˚~~~~~~ */
+
+.auth-bg {
+    background-color: #e5e5e5;
+}
+
+.root-logo img {
+    padding-top: 44px;
+    width: 202px;
+    padding-bottom: 67px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.login-box {
+    width: 570px;
+    margin: 0 auto;
+    border: 1px solid #ababab;
+    border-radius: 4px;
+    padding: 155px 56px;
+    background-color: #fff;
+}
+
+.login-box h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29.26px;
+    margin-bottom: 32px;
+}
+
+.login-box button {
+    background-color: transparent;
+    border-radius: 57px;
+    border: 1px solid #c7c7c7;
+    width: 457px;
+    position: relative;
+    height: 51px;
+    margin-bottom: 15px;
+}
+
+.login-box button img {
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    width: 31px;
+}
+
+.login-box p {
+    font-weight: 500;
+}
+
+.login-box p span {
+    color: #3f90fc;
+    cursor: pointer;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~ Register as a Volunteer ~~~~~~˚∆˚~~~~~~ */
+
+.register-box {
+    border: 1px solid #ababab;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 36px 55px;
+}
+
+.register-box h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    margin-bottom: 53px;
+}
+
+.register-box input[type="text"],
+.register-box input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #999;
+    margin-bottom: 45px;
+    border-radius: 0;
+}
+
+.register-box input[type="text"]::placeholder,
+.register-box input[type="email"]::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #000;
+    opacity: 1;
+    /* Firefox */
+}
+
+.register-box button {
+    width: 100%;
+    padding: 14px 0;
+    margin-bottom: 30px;
+}
+
+/*! ~~~~~~˚∆˚~~~~~~ Date Picker  ~~~~~~˚∆˚~~~~~~*/
+.date-picker button.react-date-picker__clear-button.react-date-picker__button {
+    display: none;
+    visibility: hidden;
+}
+
+.react-date-picker.react-date-picker--closed {
+    width: 100%;
+}
+.date-picker button.react-date-picker__calendar-button.react-date-picker__button {
+    position: absolute;
+    right: 0;
+    top: -11px;
+    width: 32px;
+}
+.date-picker {
+    position: relative;
+    width: 100%;
+}
+.date-picker.react-date-picker__wrapper {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding-left: 10px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~  All Events  ~~~~~~˚∆˚~~~~~~*/
+
+.events-group {
+    padding-top: 20px;
+    padding-bottom: 200px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.events {
+    background-color: #fff;
+    padding: 23px 24px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px #999;
+    transition: 0.3s;
+    margin-bottom: 33px;
+}
+
+.events-img img {
+    width: 194px;
+    height: 173px;
+}
+
+.events-des {
+    padding-left: 23px;
+    position: relative;
+    width: 100%;
+}
+
+.events-des h2 {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 900;
+    margin-bottom: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.events:hover .events-des h2 {
+    color: #999;
+}
+
+.events-des h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.events-des button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    border: none;
+    color: #787878;
+    font-weight: 500;
+    line-height: 22px;
+    padding: 13px 41px;
+    transition: 0.3s;
+}
+
+.events-des button:hover {
+    background-color: #ff4136;
+    color: #fff;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~  Admin  ~~~~~~˚∆˚~~~~~~*/
+
+.admin {
+    background-color: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+.sidebar {
+    padding: 0 40px;
+}
+
+.sidebar-route a {
+    text-decoration: none;
+}
+
+.sidebar-img img {
+    width: 202.81px;
+    height: 60px;
+    margin-bottom: 50px;
+}
+
+.sidebar-route button {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    display: block;
+    margin-bottom: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    color: #111111;
+}
+
+.sidebar-route button img {
+    width: 15px;
+    margin-right: 8px;
+}
+
+.sidebar-img {
+    padding: 24px 0;
+}
+
+.sidebar-route button:hover {
+    color: #207fee;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~  Admin All User  ~~~~~~˚∆˚~~~~~~*/
+
+h3.admin-page-title {
+    padding: 32px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #0c0c0c;
+}
+
+.all-user-box {
+    padding-top: 23px;
+    padding-left: 23px;
+    border-radius: 10px 0 0 10px;
+    padding-bottom: 200px;
+}
+
+.user-table table {
+    background-color: #fff;
+    border-radius: 10px 0 0 10px;
+    margin: 0px;
+}
+
+.user-table thead tr th {
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    color: #686868;
+}
+
+.user-table tbody tr td {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    border: none;
+    padding-bottom: 0;
+}
+
+.user-table tbody button img {
+    background-color: #ff444a;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.user-table tbody tr td button {
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    display: contents;
+}
+
+.user-table tbody tr:first-child td {
+    padding-top: 27px;
+}
+
+.user-table {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px 0 0 10px;
+}
+
+
+/*! ~~~~~~˚∆˚~~~~~~  Admin Add Event ~~~~~~˚∆˚~~~~~~*/
+
+.all-user-box button {
+    position: absolute;
+    right: 16px;
+    bottom: 140px;
+}
+
+p.upload-icon img {
+    width: 24px;
+    height: auto;
+    margin-right: 6px;
+}
+
+p.upload-icon {
+    color: #0084ff;
+    padding: 10px 20px;
+    border: 1px solid #0084ff;
+    width: 176px;
+    border-radius: 5px;
+    background-color: #e5f3ff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
