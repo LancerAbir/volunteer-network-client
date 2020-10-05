@@ -5,7 +5,13 @@ import addLogo from "../../images/logos/plus 1.png";
 import uploadIcon from "../../images/logos/cloud-upload-outline 1.png";
 import { Link } from "react-router-dom";
 
+
+
 const AddEvent = () => {
+
+
+
+
   return (
     <div className="admin">
       <div className="container-fluid">

@@ -28,13 +28,14 @@ function App() {
             <PrivateRoute path="/events">
               <Events> </Events>
             </PrivateRoute>
-            <Route exact path="/blog" component={Blog} />
+            <PrivateRoute path="/blog">
+              <Blog></Blog>
+            </PrivateRoute>
             <Route exact path="/login" component={Login} />
-            <Route path="/register/:SingleVolKey">
+            <PrivateRoute path="/register/:SingleVolKey">
               <Register> </Register>
-            </Route>
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/allUser" component={AllUser} />
+            </PrivateRoute>
+            <Route exact path="/allUser" component={Admin} />
             <Route exact path="/addEvent" component={AddEvent} />
             <Route path="*" component={NotFound} />
           </Switch>

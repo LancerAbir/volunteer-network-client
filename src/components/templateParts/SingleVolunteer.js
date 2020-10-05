@@ -1,8 +1,6 @@
 import React from "react";
 
 
-
-
 const SingleVolunteer = (props) => {
 
   //** Distructure Data */
@@ -14,7 +12,7 @@ const SingleVolunteer = (props) => {
           {/* <!--  Volunteer Image --!> */}
           <img src={img} alt="" />
           {/* <!--  Volunteer Title --!> */}
-          <div className="volunteer-title d-flex">
+          <div style={{ backgroundColor: `#${Math.floor(Math.random() * 16777215).toString(16)}`}} className="volunteer-title d-flex">
             <h5 className="align-items-center"> {title} </h5>
           </div>
         </div>

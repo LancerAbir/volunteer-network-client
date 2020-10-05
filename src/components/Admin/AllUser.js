@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logos/Group 1329.png";
 import userLogo from "../../images/logos/users-alt 1.png";
 import addLogo from "../../images/logos/plus 1.png";
 import deleteIcon from "../../images/logos/trash-2 9.png";
+import SingleUser from "./SingleUser";
 
 const AllUser = () => {
+
+  const [userInfo, setUserInfo] = useState([])
+  console.log(userInfo);
+  //** Data Come Form Server */
+  useEffect(() => {
+    fetch('http://localhost:6600/users')
+    .then(res => res.json())
+    .then(data => setUserInfo(data))
+  }, [])
+
+
+
   return (
     <div className="admin">
       <div className="container-fluid">
+
+
+
         <div className="row">
           <div className="col-md-3">
             <div className="sidebar">
@@ -53,41 +69,11 @@ const AllUser = () => {
                         </thead>
         
                         {/* <!--  Table Data --!> */}
-                        <tbody>
-                        <tr>
-                            <td>Sufi Ahmed Hamim</td>
-                            <td>sufi@gmail.com</td>
-                            <td>22-10-2020</td>
-                            <td>Organize books at the library.</td>
-                            <td>
-                            <button type="submit">
-                                <img src={deleteIcon} alt="" />
-                            </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sufi Ahmed Hamim</td>
-                            <td>sufi@gmail.com</td>
-                            <td>22-10-2020</td>
-                            <td>Organize books at the library.</td>
-                            <td>
-                            <button type="submit">
-                                <img src={deleteIcon} alt="" />
-                            </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sufi Ahmed Hamim</td>
-                            <td>sufi@gmail.com</td>
-                            <td>22-10-2020</td>
-                            <td>Organize books at the library.</td>
-                            <td>
-                            <button type="submit">
-                                <img src={deleteIcon} alt="" />
-                            </button>
-                            </td>
-                        </tr>
-                        </tbody>
+                        {
+                          userInfo.map(userIn => <SingleUser key={userIn.key} userIn={userIn}></SingleUser> )
+                        }
+                        
+
                     </table>
                     </div>
                 </div>
@@ -95,6 +81,8 @@ const AllUser = () => {
             </div>
           </div>
         </div>
+
+        
       </div>
     </div>
   );

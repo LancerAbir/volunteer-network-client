@@ -58,7 +58,7 @@ const Navbar = () => {
               <Link to="/register">
                 <button className="btn btn-primary"> Register </button>
               </Link>
-              <Link to="/admin">
+              <Link to="/allUser">
                 <button className="btn btn-dark"> Admin </button>
               </Link>
               {loggedInUser.email ? 
