@@ -14,8 +14,13 @@ const AllUser = () => {
     fetch('http://localhost:6600/users')
     .then(res => res.json())
     .then(data => setUserInfo(data))
-  }, [])
+  }, [userInfo])
 
+
+  const sdd = (id) => {
+    const sss = userInfo.filter( dsd => dsd._id != id)
+    setUserInfo(sss)
+  }
 
 
   return (
@@ -69,7 +74,7 @@ const AllUser = () => {
         
                         {/* <!--  Table Data --!> */}
                         {
-                          userInfo.map(userIn => <SingleUser key={userIn.key} userIn={userIn}></SingleUser> )
+                          userInfo.map(userIn => <SingleUser key={userIn.key} userIn={userIn} sdd={sdd}></SingleUser> )
                         }
                         
 

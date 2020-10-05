@@ -1,7 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 import logo from "../../images/logos/Group 1329.png";
+import { signOutHandler } from "../Auth/LoginManager.js";
+// import volunteerData from "../../volunteerData"
 
 
 
@@ -11,13 +13,6 @@ const Navbar = () => {
 
   //** Data Come Form Context API */
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
-
-  // //** OnMouse Over Toggle Hide and Visible */
-  // const [visibility, setVisibility] = useState(false);
-  // const toggleVisibility = () => {
-  //   setVisibility(!visibility);
-  // };
 
 
   //** FakeData Send in Database */
@@ -31,6 +26,14 @@ const Navbar = () => {
   //   });
   // };
  
+
+  //** Google Sign Out Handler */
+  const googleSignOut = () => {
+    signOutHandler()
+    .then(res => {
+        setLoggedInUser(res)
+    })
+  }
 
 
   return (
@@ -58,9 +61,16 @@ const Navbar = () => {
               <Link to="/register">
                 <button className="btn btn-primary"> Register </button>
               </Link>
-              <Link to="/allUser">
+
+              {
+                loggedInUser.email ? <Link> <button onClick={googleSignOut} className="btn btn-danger"> Logout </button> </Link>  : <Link to="/allUser">
                 <button className="btn btn-dark"> Admin </button>
               </Link>
+              }
+
+              
+              
+
               {loggedInUser.email ? 
                 <h6
                   style={{ fontWeight: "700" }}

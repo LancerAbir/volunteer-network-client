@@ -41,7 +41,7 @@ const Register = () => {
   const { SingleVolKey } = useParams();
   useEffect(() => {
     if (singleData.length > 0) {
-      const card = singleData.find((sinPl) => sinPl.key === SingleVolKey);
+      const card = singleData.find((sinPl) => sinPl._id === SingleVolKey);
       setRegister(card);
     }
   }, [singleData]);

@@ -20,7 +20,7 @@ const AllEvents = () => {
       })
       .then(res => res.json())
       .then(data => setAllEvent(data))
-    }, [])
+    }, [allEvent])
 
 
 

@@ -33,17 +33,24 @@ const AddEvent = () => {
 
     const submitHandler = (e) => {
       const title = document.getElementById('titleAdd').value
-      const date = document.getElementById('dateAdd').value
+      const createDate = document.getElementById('dateAdd').value
       const description = document.getElementById('descriptionAdd').value
-      const total = {title, date, description}
+      const total = {title, createDate, description}
+      console.log(total);
   
+        
+        //** Data Send For Admin Database */
         fetch("http://localhost:6600/addVolunteer", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(total),
-        });
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
     }
 
   return (
@@ -80,7 +87,9 @@ const AddEvent = () => {
             <div className="admin-content auth-bg">
               <div className="all-user-box">
                 <div className="user-table">
-                  <form>
+
+
+                  <form method="POST">
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputEmail4">Event Title</label>
@@ -126,6 +135,8 @@ const AddEvent = () => {
                       </div>
                     </div>
                   </form>
+
+
                 </div>
                 <button onClick={()=> submitHandler()} type="submit" class="btn btn-primary mr-auto">
                   Submit
@@ -136,7 +147,7 @@ const AddEvent = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div>  
   );
 };
 

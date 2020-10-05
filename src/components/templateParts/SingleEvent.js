@@ -4,8 +4,10 @@ const SingleEvent = (props) => {
   const { img, title, setThisDate, _id } = props.event;
 
 
+
   //** Delete Data Form Database */
   const eventDeleteHandler = (id) => {
+    console.log();
     fetch(`http://localhost:6600/eventdelete/${id}`, {
       method: 'DELETE',
     })
@@ -24,7 +26,7 @@ const SingleEvent = (props) => {
         <h2>{title}</h2>
         <h3>{new Date(setThisDate).toDateString("dd/MM/yyyy")}</h3>
         <button
-          onClick={() => eventDeleteHandler({_id})}
+          onClick={() => eventDeleteHandler(_id)}
           className="btn btn-danger"
         >
           Cancel

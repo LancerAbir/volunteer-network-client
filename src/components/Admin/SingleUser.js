@@ -15,7 +15,7 @@ const SingleUser = (props) => {
         fetch(`http://localhost:6600/userdelete/${id}`, {
           method: 'DELETE',
         })
-            
+            .then(res => res.json())
             .then(result => {
                 console.log("Delete Successfully", result);
             });
@@ -32,7 +32,7 @@ const SingleUser = (props) => {
             <td>{(new Date(setThisDate).toDateString('dd/MM/yyyy'))}</td>
             <td>{title}</td>
             <td>
-            <button onClick={() => userDeleteHandler({_id})} type="submit">
+            <button onClick={() => userDeleteHandler(_id)} type="submit">
                 <img src={deleteIcon} alt="" />
             </button>
             </td>
