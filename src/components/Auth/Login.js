@@ -43,7 +43,7 @@ const Login = () => {
       .then((res) => {
         setUser(res);
         setLoggedInUser(res);
-        history.replace(from);
+        storeAuthToken()
       })
       .catch((error) => {
         console.log(error);
@@ -51,6 +51,23 @@ const Login = () => {
         setUser(error.message);
       });
   };
+
+
+  //** JWT Firebase  */
+  const storeAuthToken = () => {
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+    .then(function(idToken) {
+      sessionStorage.setItem('token', idToken)
+      history.replace(from);
+      // Send token to your backend via HTTPS
+      // ...
+    }).catch(function(error) {
+      // Handle error
+    });
+  }
+
+
+
 
   return (
     <div className="auth-bg">

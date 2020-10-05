@@ -6,8 +6,22 @@ import deleteIcon from "../../images/logos/trash-2 9.png";
 
 const SingleUser = (props) => {
 
-    const {fastName, email, setThisDate, title} = props.userIn 
+    const {fastName, email, setThisDate, title, _id} = props.userIn 
 
+
+       //** Delete Data Form Database */
+       const userDeleteHandler = (id) => {
+           console.log(id);
+        fetch(`http://localhost:6600/userdelete/${id}`, {
+          method: 'DELETE',
+        })
+            
+            .then(result => {
+                console.log("Delete Successfully", result);
+            });
+      };
+
+      
 
     return (
        
@@ -18,7 +32,7 @@ const SingleUser = (props) => {
             <td>{(new Date(setThisDate).toDateString('dd/MM/yyyy'))}</td>
             <td>{title}</td>
             <td>
-            <button type="submit">
+            <button onClick={() => userDeleteHandler({_id})} type="submit">
                 <img src={deleteIcon} alt="" />
             </button>
             </td>

@@ -7,13 +7,22 @@ const AllEvents = () => {
     //** Data Come Form Context API */
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
-    const [allEvent, setAllEvent] = useState([])
+    
     //** Data Come Form Server */
+    const [allEvent, setAllEvent] = useState([])
     useEffect(() => {
-      fetch('http://localhost:6600/events?email='+loggedInUser.email)
+      fetch('http://localhost:6600/events?email='+loggedInUser.email, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${sessionStorage.getItem('token')}`
+        }
+      })
       .then(res => res.json())
       .then(data => setAllEvent(data))
     }, [])
+
+
 
 
   return (
@@ -21,7 +30,7 @@ const AllEvents = () => {
       <div className="container">
         <div className="row">
           {
-            allEvent.map((event, index) => <div className="col-md-6"> <SingleEvent key={index._id} event={event}></SingleEvent> </div>)
+            allEvent.map((event, index) => <div className="col-md-6"> <SingleEvent key={index.key} event={event}></SingleEvent> </div>)
           }
         </div>
       </div>

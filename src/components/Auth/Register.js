@@ -11,7 +11,11 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 
+
+
+
 const Register = () => {
+
   //** Date Picker */
   const [selectedDate, setSelectedDate] = useState({
     setThisDate: new Date(),
@@ -22,16 +26,18 @@ const Register = () => {
     setSelectedDate(updateDates);
   };
 
-  const [singleData, setSingleData] = useState([]);
+
   //** Data Come Form Server */
+  const [singleData, setSingleData] = useState([]);
   useEffect(() => {
     fetch("http://localhost:6600/volunteers")
       .then((res) => res.json())
       .then((data) => setSingleData(data));
   }, []);
 
-  const [register, setRegister] = useState({});
+
   //** Dynamic Key Single Place */
+  const [register, setRegister] = useState({});
   const { SingleVolKey } = useParams();
   useEffect(() => {
     if (singleData.length > 0) {
@@ -40,15 +46,19 @@ const Register = () => {
     }
   }, [singleData]);
 
+
   //** Data Come Form Context API */
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
 
   //** Logged User Info */
   const loggedName = loggedInUser.email && loggedInUser.fastName;
   const loggedEmail = loggedInUser.email && loggedInUser.email;
 
+
   //** Description Value */
   const [description, setDescription] = useState("descriptionId");
+  
 
   //** loggedUser Data Send in Database */
   const desValueHandler = () => {

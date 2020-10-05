@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logos/Group 1329.png";
 import userLogo from "../../images/logos/users-alt 1.png";
 import addLogo from "../../images/logos/plus 1.png";
-import deleteIcon from "../../images/logos/trash-2 9.png";
 import SingleUser from "./SingleUser";
 
 const AllUser = () => {
 
   const [userInfo, setUserInfo] = useState([])
-  console.log(userInfo);
+  
   //** Data Come Form Server */
   useEffect(() => {
     fetch('http://localhost:6600/users')

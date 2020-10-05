@@ -11,6 +11,40 @@ const AddEvent = () => {
 
 
 
+  //** FakeData Send in Database */
+  // const allDataLoadHandlerAdmin = () => {
+  //   const title = document.getElementById('title').value
+  //   const date = document.getElementById('date').value
+  //   const description = document.getElementById('description').value
+  //   const total = {title, date, description}
+
+    
+
+  //     fetch("http://localhost:6600/addVolunteer", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(total),
+  //     });
+  //   };
+
+ 
+
+    const submitHandler = (e) => {
+      const title = document.getElementById('titleAdd').value
+      const date = document.getElementById('dateAdd').value
+      const description = document.getElementById('descriptionAdd').value
+      const total = {title, date, description}
+  
+        fetch("http://localhost:6600/addVolunteer", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(total),
+        });
+    }
 
   return (
     <div className="admin">
@@ -52,8 +86,9 @@ const AddEvent = () => {
                         <label for="inputEmail4">Event Title</label>
                         <input
                           type="text"
+                          name='titleAdd'
+                          id='titleAdd'
                           class="form-control"
-                          id="inputEmail4"
                           placeholder="Enter Title"
                         />
                       </div>
@@ -61,8 +96,9 @@ const AddEvent = () => {
                         <label for="inputPassword4">Event Date</label>
                         <input
                           type="text"
+                          name='dateAdd'
+                          id='dateAdd'
                           class="form-control"
-                          id="inputPassword4"
                           placeholder="Select Date"
                         />
                       </div>
@@ -74,8 +110,9 @@ const AddEvent = () => {
                         <textarea
                           type="textarea"
                           class="form-control"
-                          id="inputAddress"
-                          placeholder="Enter Designation"
+                          name="descriptionAdd"
+                          id="descriptionAdd"
+                          placeholder="Enter Description"
                         />
                       </div>
                       <div class="form-group col-md-6">
@@ -85,15 +122,12 @@ const AddEvent = () => {
                           <img src={uploadIcon} alt="" />
                           Upload image
                         </p>
-      
-                        <form action="/action_page.php">
-                          <input type="file" id="myFile" name="filename" />
-                        </form>
+    
                       </div>
                     </div>
                   </form>
                 </div>
-                <button type="submit" class="btn btn-primary mr-auto">
+                <button onClick={()=> submitHandler()} type="submit" class="btn btn-primary mr-auto">
                   Submit
                 </button>
               </div>
